@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nessma — Au-delà de l'Odeur</title>
+<meta property="og:image" content="img/collection.jpg">
+<meta name="theme-color" content="#070605">
+<meta name="description" content="Nessma, extraits de parfum 100 ml à 30 €. Livraison gratuite à Bruxelles ou retrait sur place.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070605; --bg2:#0f0d0b; --card:#13110e; --line:#2a241c;
+  --gold:#c9a063; --gold2:#e6c68f; --text:#efe8dc; --muted:#9d9486;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Montserrat',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(7,6,5,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:26px;font-weight:500;letter-spacing:.5px}
+.logo svg{width:18px;height:28px}
+.navlinks{display:flex;gap:28px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.navlinks a:hover{color:var(--gold2)}
+.cartbtn{position:relative;background:none;border:1px solid var(--gold);color:var(--gold2);padding:9px 16px;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.cartbtn .count{position:absolute;top:-8px;right:-8px;background:var(--gold);color:#000;font-weight:600;font-size:11px;min-width:20px;height:20px;border-radius:10px;display:grid;place-items:center;letter-spacing:0}
+@media(max-width:760px){.navlinks{display:none}}
+
+/* HERO */
+.hero{position:relative;text-align:center;padding:90px 0 80px;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 0%,rgba(201,160,99,.18),transparent 60%),var(--bg)}
+.hero .flame{width:46px;height:70px;margin:0 auto 18px;filter:drop-shadow(0 0 18px rgba(230,198,143,.35))}
+.hero .brand{font-family:var(--serif);font-size:clamp(54px,11vw,96px);font-weight:500;line-height:1}
+.hero .tag{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--muted);margin-top:6px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,6vw,56px);margin-top:48px;line-height:1.1;letter-spacing:2px}
+.hero h1 em{display:block;color:var(--gold);font-weight:500}
+.hero p.sub{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);margin-top:22px}
+.pricebox{max-width:calc(100% - 32px);display:inline-flex;align-items:center;gap:22px;border:1px solid var(--gold);padding:14px 30px;margin-top:40px}
+.pricebox .p{font-family:var(--serif);font-size:56px;color:var(--gold2);line-height:1}
+.pricebox small{font-size:11px;letter-spacing:2px;text-transform:uppercase;text-align:left;color:var(--text)}
+.cta{display:inline-block;margin-top:36px;background:var(--gold);color:#000;padding:15px 34px;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;border:none;transition:.2s}
+.cta:hover{background:var(--gold2)}
+
+/* SMOKE */
+.smoke{position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.05),transparent 70%);filter:blur(20px);animation:drift 14s ease-in-out infinite}
+.smoke.s1{left:-60px;top:40px}.smoke.s2{right:-80px;top:180px;animation-delay:-6s}
+@keyframes drift{50%{transform:translate(30px,-40px) scale(1.2)}}
+
+/* PERKS */
+.perks{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+.perks .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding-top:22px;padding-bottom:22px}
+.perk{display:flex;align-items:center;gap:12px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;line-height:1.4}
+.perk svg{width:26px;height:26px;flex-shrink:0;stroke:var(--gold);fill:none;stroke-width:1.4}
+@media(max-width:760px){.perks .wrap{grid-template-columns:1fr 1fr;gap:18px}}
+
+/* SECTION */
+section{padding:80px 0}
+.stitle{text-align:center;margin-bottom:44px}
+.stitle small{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold)}
+.stitle h2{font-family:var(--serif);font-weight:400;font-size:clamp(32px,5vw,46px);margin-top:6px}
+.filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.filters button{background:none;border:1px solid var(--line);color:var(--muted);padding:8px 18px;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.filters button.on{border-color:var(--gold);color:var(--gold2)}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.card{background:var(--card);border:1px solid var(--line);position:relative;display:flex;flex-direction:column;transition:.3s}
+.card:hover{border-color:var(--acc);transform:translateY(-3px)}
+.card .visual{aspect-ratio:4/5;position:relative;cursor:pointer;overflow:hidden;background:#050505}
+.visual img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.card:hover .visual img{transform:scale(1.04)}
+.badge{position:absolute;top:14px;left:14px;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;font-weight:500}
+.badge.ok{background:rgba(201,160,99,.15);color:var(--gold2);border:1px solid rgba(201,160,99,.4)}
+.badge.out{background:rgba(255,255,255,.06);color:var(--muted);border:1px solid var(--line)}
+.card.soldout .visual img{opacity:.5;filter:grayscale(.7)}
+.badge{z-index:2}
+.card .body{padding:20px;display:flex;flex-direction:column;flex:1}
+.card h3{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.1}
+.card .fam{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--acc);margin-top:6px;filter:brightness(1.3)}
+.card .row{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:18px}
+.card .price{font-family:var(--serif);font-size:28px;color:var(--gold2)}
+.stars{color:var(--acc);letter-spacing:2px;font-size:13px;filter:brightness(1.3)}
+.add{background:none;border:1px solid var(--gold);color:var(--gold2);padding:9px 14px;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:.2s}
+.add:hover{background:var(--gold);color:#000}
+.add.in{background:var(--gold);color:#000}
+.add.notify{border-color:var(--line);color:var(--muted)}
+.add.notify:hover{background:var(--line);color:var(--text)}
+.more{background:none;border:none;color:var(--muted);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;margin-top:12px;text-align:left;text-decoration:underline;text-underline-offset:4px}
+
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr 1fr;gap:12px}
+  .card .body{padding:12px}
+  .card h3{font-size:19px}
+  .card .fam{font-size:8.5px;letter-spacing:1.5px}
+  .card .row{flex-direction:column;align-items:stretch;gap:8px;padding-top:12px}
+  .card .price{font-size:22px}
+  .add{padding:9px 6px;font-size:10px;letter-spacing:1px}
+  .badge{top:8px;left:8px;font-size:8px;letter-spacing:1px;padding:4px 6px}
+  .card .body p{font-size:11px!important}
+}
+/* HOW */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.step{border:1px solid var(--line);padding:30px 24px;background:var(--card)}
+.step .n{font-family:var(--serif);font-size:44px;color:var(--gold);line-height:1}
+.step h4{font-family:var(--serif);font-size:24px;font-weight:500;margin:10px 0 8px}
+.step p{font-size:14px;color:var(--muted)}
+@media(max-width:760px){.steps{grid-template-columns:1fr}}
+.infos{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}
+.info{border:1px solid var(--line);padding:24px;display:flex;gap:16px;align-items:flex-start}
+.info svg{width:30px;height:30px;stroke:var(--gold);fill:none;stroke-width:1.4;flex-shrink:0}
+.info h5{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:500}
+.info p{font-size:14px;color:var(--muted);margin-top:4px}
+@media(max-width:760px){.infos{grid-template-columns:1fr}}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:50px 0 110px;text-align:center}
+footer .logo{justify-content:center}
+footer .tag{font-family:var(--serif);font-style:italic;color:var(--muted)}
+.socials{display:flex;justify-content:center;gap:14px;margin:24px 0}
+.socials a{border:1px solid var(--line);width:46px;height:46px;display:grid;place-items:center;transition:.2s}
+.socials a:hover{border-color:var(--gold)}
+.socials svg{width:20px;height:20px;fill:var(--gold2)}
+footer .legal{font-size:11px;color:#5f584e;max-width:640px;margin:18px auto 0}
+
+/* MODAL (produit) */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:90;opacity:0;pointer-events:none;transition:.25s}
+.overlay.on{opacity:1;pointer-events:auto}
+.modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-46%);width:min(900px,94vw);max-height:90vh;overflow:auto;background:var(--bg2);border:1px solid var(--line);z-index:100;opacity:0;pointer-events:none;transition:.25s}
+.modal.on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
+.modal .x{position:absolute;top:12px;right:14px;background:none;border:none;color:var(--muted);font-size:28px;z-index:2}
+.mgrid{display:grid;grid-template-columns:1fr 1.2fr}
+.mgrid .visual{background:#050505}
+.mbody{padding:36px 30px}
+.mbody h3{font-family:var(--serif);font-size:42px;font-weight:500;line-height:1}
+.mbody .fam{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--acc);filter:brightness(1.3);margin-top:8px}
+.pyr{margin-top:24px}
+.pyr div{border-top:1px solid var(--line);padding:12px 0}
+.pyr small{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold)}
+.pyr p{font-family:var(--serif);font-size:19px;margin-top:2px}
+.mrow{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:18px;margin-top:6px}
+@media(max-width:760px){.mgrid{grid-template-columns:1fr}.mgrid .visual img{max-height:48vh;object-fit:contain}}
+
+/* PANIER */
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,100vw);background:var(--bg2);border-left:1px solid var(--line);z-index:100;transform:translateX(100%);transition:.3s;display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.dhead{display:flex;justify-content:space-between;align-items:center;padding:20px 22px;border-bottom:1px solid var(--line)}
+.dhead h3{font-family:var(--serif);font-size:28px;font-weight:500}
+.dhead button{background:none;border:none;color:var(--muted);font-size:28px}
+.dbody{flex:1;overflow:auto;padding:18px 22px}
+.empty{color:var(--muted);text-align:center;padding:40px 0;font-size:14px}
+.line{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.line b{font-family:var(--serif);font-size:20px;font-weight:500}
+.qty{display:flex;align-items:center;gap:10px}
+.qty button{width:28px;height:28px;background:none;border:1px solid var(--line);color:var(--text)}
+form.resa{margin-top:22px;display:grid;gap:12px}
+form.resa label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+form.resa input,form.resa select,form.resa textarea{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--text);padding:11px 12px;font-family:inherit;font-size:14px;margin-top:5px}
+form.resa input:focus,form.resa select:focus,form.resa textarea:focus{outline:none;border-color:var(--gold)}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:5px}
+.modes input{display:none}
+.modes span{display:block;border:1px solid var(--line);padding:10px;text-align:center;font-size:12px;cursor:pointer;line-height:1.35}
+.modes span small{display:block;color:var(--muted);font-size:10px}
+.modes input:checked+span{border-color:var(--gold);color:var(--gold2)}
+.dfoot{border-top:1px solid var(--line);padding:18px 22px}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.total span{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.total b{font-family:var(--serif);font-size:32px;color:var(--gold2);font-weight:500}
+.wa{width:100%;background:#1f8a4c;color:#fff;border:none;padding:15px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:10px}
+.wa:disabled{opacity:.4;cursor:not-allowed}
+.wa svg{width:18px;height:18px;fill:#fff}
+.note{font-size:11px;color:var(--muted);text-align:center;margin-top:10px}
+
+/* FLOAT */
+.float{position:fixed;left:16px;right:16px;bottom:16px;z-index:40;display:none}
+.float button{width:100%}
+@media(max-width:760px){.float.on{display:block}}
+.toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,20px);background:var(--gold);color:#000;padding:10px 20px;font-size:12px;font-weight:600;letter-spacing:1px;z-index:200;opacity:0;transition:.25s;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="flame" viewBox="0 0 40 64"><path d="M22 2c4 10-10 16-10 30 0 8 5 14 12 16-4-4-5-9-2-15 3-7 10-10 9-20 5 6 7 13 5 21-2 9-9 15-17 16C8 50 2 42 3 32 5 18 20 14 22 2z" fill="currentColor"/></symbol>
+</svg>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo"><svg style="color:var(--text)"><use href="#flame"/></svg>Nessma</a>
+    <div class="navlinks">
+      <a href="#collection">Collection</a>
+      <a href="#comment">Réserver</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="cartbtn" onclick="openCart()">Ma sélection<span class="count" id="count">0</span></button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="smoke s1"></div><div class="smoke s2"></div>
+  <svg class="flame" style="color:var(--text)"><use href="#flame"/></svg>
+  <div class="brand">Nessma</div>
+  <div class="tag">Au-delà de l'Odeur</div>
+  <h1>11 Signatures.<em>Une seule identité.</em></h1>
+  <p class="sub">Des fragrances inspirées des plus grandes références</p>
+  <div class="pricebox">
+    <small>Chaque<br>parfum</small>
+    <div class="p">30€</div>
+    <small>Extrait de parfum<br>100 ml</small>
+  </div>
+  <br>
+  <a href="#collection" class="cta">Découvrir la collection</a>
+</header>
+
+<div class="perks">
+  <div class="wrap">
+    <div class="perk"><svg viewBox="0 0 24 24"><path d="M1 6h13v10H1zM14 10h4l3 3v3h-7M5 19a2 2 0 100-4 2 2 0 000 4zm12 0a2 2 0 100-4 2 2 0 000 4z"/></svg>Livraison gratuite<br>Bruxelles</div>
+    <div class="perk"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Livraison 18h – 00h<br>tous les jours</div>
+    <div class="perk"><svg viewBox="0 0 24 24"><path d="M3 9l2-5h14l2 5M3 9v11h18V9M3 9h18M9 20v-6h6v6"/></svg>Retrait sur place<br>10h – 18h</div>
+    <div class="perk"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 .9-4.5 4.3 1 6.3L12 16.5 6.5 19.5l1-6.3L3 8.9 9 8z"/></svg>Extrait de parfum<br>qualité premium</div>
+  </div>
+</div>
+
+<section id="collection">
+  <div class="wrap">
+    <div class="stitle"><small>La collection</small><h2>Nos signatures</h2></div>
+    <div class="filters" id="filters">
+      <button class="on" data-f="all">Tout</button>
+      <button data-f="dispo">Disponibles</button>
+      <button data-f="out">Bientôt de retour</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section id="comment" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="stitle"><small>Simple &amp; rapide</small><h2>Comment réserver</h2></div>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h4>Choisissez</h4><p>Ajoutez vos parfums préférés à votre sélection, autant que vous le souhaitez.</p></div>
+      <div class="step"><div class="n">02</div><h4>Réservez</h4><p>Indiquez votre prénom, livraison ou retrait, et votre créneau. Votre demande part directement sur WhatsApp.</p></div>
+      <div class="step"><div class="n">03</div><h4>Recevez</h4><p>Nous confirmons votre réservation par message, puis remise en main propre. Paiement à la remise.</p></div>
+    </div>
+    <div class="infos">
+      <div class="info"><svg viewBox="0 0 24 24"><path d="M1 6h13v10H1zM14 10h4l3 3v3h-7M5 19a2 2 0 100-4 2 2 0 000 4zm12 0a2 2 0 100-4 2 2 0 000 4z"/></svg><div><h5>Livraison gratuite — Bruxelles</h5><p>Tous les jours de 18h à minuit, directement chez vous.</p></div></div>
+      <div class="info"><svg viewBox="0 0 24 24"><path d="M3 9l2-5h14l2 5M3 9v11h18V9M3 9h18M9 20v-6h6v6"/></svg><div><h5>Retrait sur place</h5><p>Tous les jours de 10h à 18h, sur rendez-vous.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <a class="logo"><svg style="color:var(--text)"><use href="#flame"/></svg>Nessma</a>
+    <div class="tag">Au-delà de l'Odeur</div>
+    <div class="socials">
+      <a id="lnk-wa" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.1-1.3c0-.1-.2-.2-.5-.3z"/></svg></a>
+      <a id="lnk-ig" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zM17.3 5.5a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4zM12 2c-2.7 0-3 0-4.1.1-4 .2-5.7 2-5.8 5.8C2 9 2 9.3 2 12s0 3 .1 4.1c.2 3.9 1.9 5.6 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c3.9-.2 5.6-1.9 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.2-3.9-1.9-5.6-5.8-5.8C15 2 14.7 2 12 2zm0 1.8c2.7 0 3 0 4 .1 2.8.1 4 1.4 4.1 4.1.1 1 .1 1.3.1 4s0 3-.1 4c-.1 2.7-1.4 4-4.1 4.1-1 .1-1.3.1-4 .1s-3 0-4-.1c-2.8-.1-4-1.4-4.1-4.1-.1-1-.1-1.3-.1-4s0-3 .1-4C4 5.3 5.3 4 8 3.9c1-.1 1.3-.1 4-.1z"/></svg></a>
+      <a id="lnk-sc" target="_blank" rel="noopener" aria-label="Snapchat"><svg viewBox="0 0 24 24"><path d="M12 2c3 0 5.4 2.3 5.4 5.5v2.3c.5.2 1.2-.2 1.6 0 .6.3.5 1-.1 1.3-.6.3-1.6.5-1.5 1.1.3 1.4 1.8 3.4 3.7 3.8.4.1.4.5.2.8-.4.6-1.8.8-2.3 1-.2.5-.2 1.1-.6 1.2-.7.2-1.6-.3-2.8 0-1.3.4-2 1.8-3.6 1.8s-2.3-1.4-3.6-1.8c-1.2-.3-2.1.2-2.8 0-.4-.1-.4-.7-.6-1.2-.5-.2-1.9-.4-2.3-1-.2-.3-.2-.7.2-.8 1.9-.4 3.4-2.4 3.7-3.8.1-.6-.9-.8-1.5-1.1-.6-.3-.7-1-.1-1.3.4-.2 1.1.2 1.6 0V7.5C6.6 4.3 9 2 12 2z"/></svg></a>
+    </div>
+    <p style="font-size:13px;color:var(--muted)">Bruxelles · Réservation par WhatsApp · Paiement à la remise</p>
+    <p class="legal">Nessma est une marque indépendante. Les noms cités servent uniquement à décrire la famille olfactive ; Nessma n'est affiliée à aucune des marques d'origine.</p>
+  </div>
+</footer>
+
+<div class="float" id="float"><button class="cta" style="margin:0" onclick="openCart()">Voir ma sélection · <span id="ftotal">0</span> €</button></div>
+
+<div class="overlay" id="overlay" onclick="closeAll()"></div>
+
+<div class="modal" id="modal"></div>
+
+<aside class="drawer" id="drawer">
+  <div class="dhead"><h3>Ma sélection</h3><button onclick="closeAll()" aria-label="Fermer">×</button></div>
+  <div class="dbody">
+    <div id="lines"></div>
+    <form class="resa" id="resa" onsubmit="send(event)">
+      <div><label>Prénom</label><input id="f-name" required placeholder="Votre prénom"></div>
+      <div><label>Mode de remise</label>
+        <div class="modes">
+          <label><input type="radio" name="mode" value="Livraison (Bruxelles)" checked><span>Livraison<small>Gratuite · 18h–00h</small></span></label>
+          <label><input type="radio" name="mode" value="Retrait sur place"><span>Retrait<small>Sur place · 10h–18h</small></span></label>
+        </div>
+      </div>
+      <div id="addr-wrap"><label>Commune / adresse</label><input id="f-addr" placeholder="Ex : Anderlecht, rue…"></div>
+      <div><label>Jour et créneau souhaités</label><input id="f-when" placeholder="Ex : samedi vers 20h"></div>
+      <div><label>Message (facultatif)</label><textarea id="f-msg" rows="2" placeholder="Une question ?"></textarea></div>
+    </form>
+  </div>
+  <div class="dfoot">
+    <div class="total"><span>Total</span><b><span id="total">0</span> €</b></div>
+    <button class="wa" id="sendbtn" form="resa" type="submit" disabled>
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2z"/></svg>Réserver via WhatsApp
+    </button>
+    <p class="note">Aucun paiement en ligne. Nous vous confirmons la réservation par message.</p>
+  </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ====== À PERSONNALISER ====== */
+const CONFIG = {
+  whatsapp: "",   // numéro au format international sans + ni espaces, ex : "32470123456"
+  instagram: "",  // ex : "https://instagram.com/nessma.parfums"
+  snapchat: ""    // ex : "https://snapchat.com/add/nessma"
+};
+/* ============================= */
+
+const P = [
+  {id:"black-orchid",name:"Black Orchid",fam:"Floral · Mystérieux · Intense",acc:"#8a6aa3",int:5,dispo:true,
+   top:"Truffe noire, Ylang-ylang, Bergamote",heart:"Orchidée noire, Lotus noir, Épices",base:"Patchouli, Vanille, Bois de santal, Vétiver"},
+  {id:"imagination",name:"Imagination",fam:"Frais · Agrumes · Élégant",acc:"#c9a063",int:4,dispo:true,
+   top:"Citron, Bergamote, Orange",heart:"Thé noir, Gingembre, Néroli",base:"Ambroxan, Bois de gaïac, Encens"},
+  {id:"virgin-island-water",name:"Virgin Island Water",fam:"Tropical · Frais · Vacances",acc:"#7fc4cc",int:3,dispo:true,
+   top:"Citron vert, Bergamote, Mandarine",heart:"Noix de coco, Gingembre, Ylang-ylang",base:"Rhum blanc, Musc, Canne à sucre"},
+  {id:"sweet-vanilla",name:"Sweet Vanilla",fam:"Gourmand · Doux · Réconfortant",acc:"#d9b08c",int:4,dispo:true,
+   top:"Caramel, Sucre brun, Mandarine",heart:"Vanille Bourbon, Fleurs blanches",base:"Fève tonka, Musc blanc, Ambre"},
+  {id:"english-pear-freesia",name:"English Pear & Freesia",fam:"Floral · Frais · Élégant",acc:"#b9c6a4",int:3,dispo:true,
+   top:"Poire, Melon",heart:"Freesia, Rose",base:"Patchouli, Musc"},
+  {id:"santal-33",name:"Santal 33",fam:"Boisé · Chic · Intemporel",acc:"#d39a4f",int:5,dispo:true,
+   top:"Cardamome, Violette",heart:"Iris, Papyrus",base:"Bois de santal, Cèdre, Cuir"},
+  {id:"absolu-aventus",name:"Absolu Aventus",fam:"Fruité · Boisé",acc:"#d8b04a",dispo:false,accord:"Ananas, Cassis"},
+  {id:"lost-cherry",name:"Lost Cherry",fam:"Gourmand · Fruité",acc:"#a83242",dispo:false,accord:"Cerise noire"},
+  {id:"bitter-peach",name:"Bitter Peach",fam:"Fruité · Épicé",acc:"#e0864a",dispo:false,accord:"Pêche, Cannelle"},
+  {id:"black-afgano",name:"Black Afgano",fam:"Boisé · Résineux · Intense",acc:"#6b4a33",dispo:false,accord:"Résines, Bois fumés"},
+  {id:"fucking-fabulous",name:"Fucking Fabulous",fam:"Aromatique · Gourmand",acc:"#8c79b8",dispo:false,accord:"Lavande, Fève tonka"}
+];
+
+const PRICE = 30;
+let cart = {};
+let filter = "all";
+const $ = s => document.querySelector(s);
+
+function bottle(p){ return `<img src="img/${p.id}.jpg" alt="Nessma ${p.name.replace(/&/g,"&amp;")}" loading="lazy">`; }
+const stars = n => "★".repeat(n) + "☆".repeat(5-n);
+
+function render(){
+  const list = P.filter(p => filter==="all" || (filter==="dispo"?p.dispo:!p.dispo));
+  $("#grid").innerHTML = list.map(p => `
+  <article class="card ${p.dispo?"":"soldout"}" style="--acc:${p.acc}">
+    <div class="visual" onclick="openProduct('${p.id}')">
+      <span class="badge ${p.dispo?"ok":"out"}">${p.dispo?"Disponible":"Bientôt de retour"}</span>
+      ${bottle(p)}
+    </div>
+    <div class="body">
+      <h3>${p.name}</h3>
+      <div class="fam">${p.fam}</div>
+      ${p.dispo?`<button class="more" onclick="openProduct('${p.id}')">Voir les notes</button>`:`<p style="font-size:13px;color:var(--muted);margin-top:10px">Accord : ${p.accord}</p>`}
+      <div class="row">
+        <span class="price">30 €</span>
+        ${p.dispo
+          ? `<button class="add ${cart[p.id]?"in":""}" onclick="add('${p.id}')">${cart[p.id]?"Ajouté ✓":"Ajouter"}</button>`
+          : `<button class="add notify" onclick="notify('${p.id}')">Me prévenir</button>`}
+      </div>
+    </div>
+  </article>`).join("");
+}
+
+function openProduct(id){
+  const p = P.find(x=>x.id===id);
+  $("#modal").style.setProperty("--acc",p.acc);
+  $("#modal").innerHTML = `<button class="x" onclick="closeAll()">×</button>
+  <div class="mgrid"><div class="visual">${bottle(p)}</div>
+  <div class="mbody"><h3>${p.name}</h3><div class="fam">${p.fam}</div>
+  ${p.dispo?`<div class="pyr">
+    <div><small>Notes de tête</small><p>${p.top}</p></div>
+    <div><small>Notes de cœur</small><p>${p.heart}</p></div>
+    <div><small>Notes de fond</small><p>${p.base}</p></div>
+    <div><small>Intensité</small><p class="stars" style="font-size:18px">${stars(p.int)}</p></div>
+  </div>`:`<div class="pyr"><div><small>Accord principal</small><p>${p.accord}</p></div><div><small>Statut</small><p>Bientôt de retour</p></div></div>`}
+  <div class="mrow"><span class="price" style="font-family:var(--serif);font-size:34px;color:var(--gold2)">30 € <small style="font-size:14px;color:var(--muted)">· 100 ml</small></span>
+  ${p.dispo?`<button class="add" onclick="add('${p.id}');closeAll();openCart()">Réserver</button>`:`<button class="add notify" onclick="notify('${p.id}')">Me prévenir</button>`}</div>
+  </div></div>`;
+  $("#modal").classList.add("on"); $("#overlay").classList.add("on");
+}
+
+function add(id){ cart[id]=(cart[id]||0)+1; update(); toast("Ajouté à votre sélection"); }
+function qty(id,d){ cart[id]=(cart[id]||0)+d; if(cart[id]<=0) delete cart[id]; update(); }
+
+function update(){
+  const n = Object.values(cart).reduce((a,b)=>a+b,0);
+  const t = n*PRICE;
+  $("#count").textContent=n; $("#total").textContent=t; $("#ftotal").textContent=t;
+  $("#float").classList.toggle("on",n>0);
+  $("#sendbtn").disabled = n===0;
+  $("#lines").innerHTML = n===0 ? `<div class="empty">Votre sélection est vide.<br>Ajoutez un parfum pour réserver.</div>` :
+    Object.entries(cart).map(([id,q])=>{const p=P.find(x=>x.id===id);return `<div class="line"><div><b>${p.name}</b><div style="font-size:12px;color:var(--muted)">100 ml · 30 €</div></div>
+    <div class="qty"><button type="button" onclick="qty('${id}',-1)">−</button>${q}<button type="button" onclick="qty('${id}',1)">+</button></div></div>`}).join("");
+  render();
+}
+
+function waLink(text){
+  return (CONFIG.whatsapp ? `https://wa.me/${CONFIG.whatsapp}` : "https://wa.me/") + "?text=" + encodeURIComponent(text);
+}
+
+function send(e){
+  e.preventDefault();
+  const ref = "NS-" + Date.now().toString(36).slice(-5).toUpperCase();
+  const mode = document.querySelector('input[name="mode"]:checked').value;
+  const items = Object.entries(cart).map(([id,q])=>`• ${q} × ${P.find(x=>x.id===id).name} (100 ml)`).join("\n");
+  const n = Object.values(cart).reduce((a,b)=>a+b,0);
+  let msg = `Bonjour Nessma ! Je souhaite réserver :\n\n${items}\n\nTotal : ${n*PRICE} €\nRéférence : ${ref}\n\nPrénom : ${$("#f-name").value}\nRemise : ${mode}`;
+  if(mode.startsWith("Livraison") && $("#f-addr").value) msg += `\nAdresse : ${$("#f-addr").value}`;
+  if($("#f-when").value) msg += `\nCréneau souhaité : ${$("#f-when").value}`;
+  if($("#f-msg").value) msg += `\nMessage : ${$("#f-msg").value}`;
+  msg += `\n\nMerci de me confirmer la réservation.`;
+  window.open(waLink(msg),"_blank");
+}
+
+function notify(id){
+  const p = P.find(x=>x.id===id);
+  window.open(waLink(`Bonjour Nessma ! Pouvez-vous me prévenir quand ${p.name} (100 ml) sera de retour en stock ? Merci !`),"_blank");
+}
+
+function openCart(){ $("#modal").classList.remove("on"); $("#drawer").classList.add("on"); $("#overlay").classList.add("on"); }
+function closeAll(){ ["#drawer","#modal","#overlay"].forEach(s=>$(s).classList.remove("on")); }
+function toast(t){ const el=$("#toast"); el.textContent=t; el.classList.add("on"); clearTimeout(el._t); el._t=setTimeout(()=>el.classList.remove("on"),1600); }
+
+document.querySelectorAll("#filters button").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll("#filters button").forEach(x=>x.classList.remove("on"));
+  b.classList.add("on"); filter=b.dataset.f; render();
+});
+document.querySelectorAll('input[name="mode"]').forEach(r=>r.onchange=()=>{
+  $("#addr-wrap").style.display = r.value.startsWith("Livraison") && r.checked ? "" : "none";
+});
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeAll(); });
+
+/* Liens réseaux */
+$("#lnk-wa").href = CONFIG.whatsapp ? `https://wa.me/${CONFIG.whatsapp}` : "#";
+[["#lnk-ig",CONFIG.instagram],["#lnk-sc",CONFIG.snapchat]].forEach(([s,u])=>{ if(u) $(s).href=u; else $(s).style.display="none"; });
+
+update();
+</script>
+</body>
+</html>
